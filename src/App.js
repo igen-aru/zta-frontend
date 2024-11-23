@@ -8,7 +8,7 @@ function App() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("http://127.0.0.1:8000/token", {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/token`, {
         username,
         password,
       });
