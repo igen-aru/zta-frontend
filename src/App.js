@@ -39,5 +39,17 @@ function App() {
     </div>
   );
 }
+const apiUrl = process.env.REACT_APP_API_URL;
 
+const fetchData = async () => {
+    try {
+        const response = await fetch(`${apiUrl}/api/example-endpoint`);
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error("Error fetching data from the backend:", error);
+    }
+};
+
+fetchData();
 export default App;
